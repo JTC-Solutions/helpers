@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  php:
+    image: php:8.3-fpm
+    container_name: php
+    build:
+      context: .
+    volumes:
+      - .:/var/www/helpers
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      PHP_INI_MEMORY_LIMIT: "1G"
+    ports:
+      - "9001:9000"
