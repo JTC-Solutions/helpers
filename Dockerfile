@@ -24,3 +24,5 @@ ADD . /var/www/helpers
 WORKDIR /var/www/helpers
 
 RUN /usr/local/bin/composer install --no-interaction --no-ansi --prefer-dist --optimize-autoloader
+
+RUN echo "Build completed successfully"

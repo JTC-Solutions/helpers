@@ -31,6 +31,12 @@ final class FQCNHelper
      */
     public static function transformFQCNToEntityName(string $fqcn, bool $toLowercase = true): string
     {
-        return strtolower(basename(str_replace('\\', '/', $fqcn)));
+        $className = basename(str_replace('\\', '/', $fqcn));
+
+        if ($toLowercase === true) {
+            $className = strtolower($className);
+        }
+
+        return $className;
     }
 }

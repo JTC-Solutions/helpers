@@ -5,4 +5,4 @@ stan:
 fix:
 	$(DOCKER_PHP) vendor/bin/ecs check --ansi --fix
 test:
-	$(DOCKER_PHP) php -d memory_limit=512M bin/phpunit
+	$(DOCKER_PHP) php -d memory_limit=512M vendor/bin/phpunit
